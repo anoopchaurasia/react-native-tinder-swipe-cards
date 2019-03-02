@@ -433,7 +433,7 @@ export default class SwipeCards extends Component {
         </Animated.View>;
       }
 
-      return <Animated.View key={card[this.props.cardKey]} style={style}>{this.props.renderCard(card, pan)}</Animated.View>;
+      return <Animated.View key={card[this.props.cardKey]} style={style}>{this.props.renderCard(card, this.state.pan)}</Animated.View>;
     });
   }
 

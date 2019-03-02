@@ -447,10 +447,10 @@ export default class SwipeCards extends Component {
 
     let rotate = pan.x.interpolate({ inputRange: [-200, 0, 200], outputRange: ["-30deg", "0deg", "30deg"] });
     let opacity = pan.x.interpolate({ inputRange: [-200, 0, 200], outputRange: [0.5, 1, 0.5] });
-
+    let zIndex = pan.x.interpolate({ inputRange: [-50, 0, 50], outputRange: [0, 1, 0] });
     let scale = enter;
 
-    let animatedCardStyles = { transform: [{ translateX }, { translateY }, { rotate }, { scale }], opacity };
+    let animatedCardStyles = { transform: [{ translateX }, { translateY }, { rotate }, { scale }], opacity, zIndex };
 
     return <Animated.View key={"top"} style={[styles.card, animatedCardStyles]} {... this._panResponder.panHandlers}>
       {this.props.renderCard(this.state.card)}
